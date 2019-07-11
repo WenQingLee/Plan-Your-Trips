@@ -64,6 +64,7 @@ In addition, if it is not obvious, you should also describe how to run your code
 ### Content
 The text for section Y was copied from the Wikipedia article Z
 ### Media
-The photos used in this site were obtained from ...
+- The theme for the single page application is adapted from: https://startbootstrap.com/themes/landing-page/
+- The photos used in this site were obtained from ...
 ### Acknowledgements
 I received inspiration for this project from X

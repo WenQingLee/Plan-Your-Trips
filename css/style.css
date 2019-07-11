@@ -1,0 +1,16 @@
+html, body {
+    height:100%;
+}
+
+#google-map{
+    height:100%;
+}
+
+
+.red {
+    color:red;
+}
+
+#map{
+    height:800px;
+}
