@@ -13,18 +13,30 @@
     <!--CSS style-->
     <link rel="stylesheet" href="css/style.css" type="text/css" />
 
+    <!--Axios CDN-->
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 
 </head>
 
 <body>
-    
+
 
     <div class="container-fluid">
-        
-        <h1 class="red">CSS test</h1>
-        
+
+        <h1 class="red">Plan your trips!</h1>
+        <div>
+        <form>
+            <div class="form-group">
+                <label for="search-location">Search Location</label>
+                <input type="text" class="form-control" id="search-location" placeholder="E.g. Singapore">
+            </div>
+            <button type="button" class="btn btn-primary" onclick="findMe()">Find Me!</button>
+            <button type="button" class="btn btn-primary" onclick="searchLocation()">Search!</button>
+        </form>
+        </div>
+
         <div id="map"></div>
-        
+
     </div>
 
 
@@ -45,14 +57,9 @@
     <!--Load Tests-->
     <script type="text/javascript" src="spec/scriptSpec.js"></script>
 
+    <!--Google Maps API-->
     </script>
-    <!--Load the API from the specified URL
-    * The async attribute allows the browser to render the page while the API loads
-    * The key parameter will contain your own API key (which is not needed for this tutorial)
-    * The callback parameter executes the initMap() function
-    -->
-    <script async defer
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBre7M7M_X-sj5MWCUAuc7KZfBXJeDWQ_k&callback=initMap">
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBre7M7M_X-sj5MWCUAuc7KZfBXJeDWQ_k&callback=initMap">
     </script>
 
 </body>
