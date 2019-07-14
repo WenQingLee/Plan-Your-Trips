@@ -25,14 +25,14 @@
 
         <h1 class="red">Plan your trips!</h1>
         <div>
-        <form>
-            <div class="form-group">
-                <label for="search-location">Search Location</label>
-                <input type="text" class="form-control" id="search-location" placeholder="E.g. Singapore">
-            </div>
-            <button type="button" class="btn btn-primary" onclick="findMe()">Find Me!</button>
-            <button type="button" class="btn btn-primary" onclick="searchLocation()">Search!</button>
-        </form>
+            <form>
+                <div class="form-group">
+                    <label for="search-location">Search Location</label>
+                    <input type="text" class="form-control" id="search-location" placeholder="E.g. Singapore">
+                </div>
+                <button type="button" class="btn btn-primary" onclick="findMe()" id="find-me">Find Me!</button>
+                <button type="button" class="btn btn-primary" onclick="searchLocation()">Search!</button>
+            </form>
         </div>
 
         <div id="map"></div>
@@ -51,16 +51,16 @@
     <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/jasmine/3.4.0/boot.js" integrity="sha256-HG8TKl0T65NyELmbUoo0H7/a1e++smYdXXtuuEsyKok=" crossorigin="anonymous"></script>-->
     <!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jasmine/3.4.0/jasmine.css" integrity="sha256-TTb3c5Z0pxgwRWHzGE700nLTMIOUNgkN2SGXqoflga0=" crossorigin="anonymous" />-->
 
-    <!--Load scripts-->
-    <script type="text/javascript" src="scripts/script.js"></script>
-
     <!--Load Tests-->
     <script type="text/javascript" src="spec/scriptSpec.js"></script>
 
     <!--Google Maps API-->
     </script>
-    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBre7M7M_X-sj5MWCUAuc7KZfBXJeDWQ_k&callback=initMap">
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDoEv5jmhi5Iw1bPJTBGAEAWUsS-BQnBro&libraries=places&callback=initMap">
     </script>
+
+    <!--Load scripts-->
+    <script type="text/javascript" src="scripts/script.js"></script>
 
 </body>
 
