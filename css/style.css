@@ -2,8 +2,14 @@ html, body {
     height:100%;
 }
 
-.red {
-    color:red;
+.web-title {
+    text-align: center;
+    color:white;
+}
+
+#banner{
+    background-image:url("../images/banner.jpg");
+    height:300px;
 }
 
 #map{

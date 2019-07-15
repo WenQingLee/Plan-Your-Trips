@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Plan your trips!</title>
+    <title>Trip Planner</title>
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
@@ -20,22 +20,24 @@
 
 <body>
 
-
-    <div class="container-fluid">
-
-        <h1 class="red">Plan your trips!</h1>
+    <header>
+        <div class="container-fluid" id="banner">
+            <h1 class="web-title">Trip Planner</h1>
+            <h5 class="web-title">For your (last-minute) travel ideas!</h5>
         <div>
-            <form>
-                <div class="form-group">
-                    <label for="search-location">Search Location</label>
-                    <input type="text" class="form-control" id="search-location" placeholder="E.g. Singapore">
-                </div>
-                <button type="button" class="btn btn-primary" onclick="findMe()" id="find-me">Find Me!</button>
-                <button type="button" class="btn btn-primary" onclick="searchLocation()">Search!</button>
-            </form>
+    </header>
+    
+    <form>
+        <div class="form-group">
+            <label for="search-location">Search Location</label>
+            <input type="text" class="form-control" id="search-location" placeholder="E.g. Singapore">
         </div>
+        <button type="button" class="btn btn-primary" onclick="findMe()" id="find-me">Find Me!</button>
+        <button type="button" class="btn btn-primary" onclick="searchLocation()">Search!</button>
+    </form>
+    </div>
 
-        <div id="map"></div>
+    <div id="map"></div>
 
     </div>
 

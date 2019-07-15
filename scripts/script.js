@@ -25,7 +25,7 @@ function initMap() {
 
   // Autocomplete box
   var autocompleteSearch = document.getElementById('search-location')
-  var autocomplete = new google.maps.places.Autocomplete(autocompleteSearch);
+  new google.maps.places.Autocomplete(autocompleteSearch);
 
 }
 
@@ -77,7 +77,7 @@ function handleLocationError(browserHasGeolocation, infoWindow, pos) {
 
 
 
-// searchLocation function
+// searchLocation function/Directions service
 function searchLocation(location) {
 
   let searchLocationRequest = document.getElementById("search-location").value

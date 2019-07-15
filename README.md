@@ -68,3 +68,9 @@ The text for section Y was copied from the Wikipedia article Z
 - The photos used in this site were obtained from ...
 ### Acknowledgements
 I received inspiration for this project from X
+Color Psychology
+https://sg.oberlo.com/blog/color-psychology-color-meanings
+color scheme:
+https://coolors.co/
+Inspiration:
+https://www.awwwards.com/sites/my-walking-challenge
