@@ -34,6 +34,7 @@
 
     <main>
 
+        <!--Search Section-->
         <section>
             <div class="container-fluid">
                 <form>
@@ -75,27 +76,76 @@
                     </div>
 
                     <!--Search button-->
-                    <div class="col">
-                        <button type="button" class="btn btn-primary" onclick="searchLocation()">Search!</button>
+                    <div class="col" id="search-button">
+                        <button type="button" class="btn btn-warning" onclick="searchLocation()">Search!</button>
                     </div>
 
                 </form>
             </div>
+        </section>
 
-
+        <!--Display Section-->
+        <section>
+            <div class="row">
+                
+                <!--Search Results-->
+                <div class="col-6">
+                    <div class="row">
+                        <div class="col-3" id="name">
+                            Name
+                        </div>
+                        <div class="col-3" id="type">
+                            Type
+                        </div>
+                        <div class="col-3" id="rating">
+                            Rating
+                        </div>
+                        <div class="col-3" id="Opening Hours">
+                            Opening Hours
+                        </div>
+                    </div>
+                </div>
+                
+                <!--Google Map-->
+                <div class="col-6" id="map"></div>
 
             </div>
         </section>
-
-
-        <div id="map"></div>
-
-        </div>
-
+        
+        <!--Email section-->
+        <section>
+            <div class="container-fluid" id="email">
+            <button type="button" class="btn btn-warning" id="send-email">Send me the itinerary</button>
+            </div>
+        </section>
+        
         <!--Remnant find me button to be incorporated as part of google maps initialisation-->
         <button type="button" class="btn btn-primary" onclick="findMe()" id="find-me">Find Me!</button>
 
     </main>
+    
+   <!--Footer-->
+    <footer>
+        <div class="container-fluid">
+            <div class="row">
+                <!--Social media icons-->
+                <div class="col my-auto">
+
+                    <div class="sm-icon" id="social-media">
+                        <a class="facebook1" href="https://www.facebook.com/ConstHub" target="_blank" title="Facebook" rel="nofollow">
+                            <div class="facebook1"></div>
+                        </a>
+                        <a class="twitter1" href="https://twitter.com/ConstHub" target="_blank" title="Twitter" rel="nofollow">
+                            <div class="twitter1"></div>
+                        </a>
+                        <a class="linkdin1" href="https://www.linkedin.com/in/ConstHub" target="_blank" title="Linkedin" rel="nofollow">
+                            <div class="linkdin1"></div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
 
 
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
