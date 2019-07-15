@@ -13,6 +13,9 @@
     <!--CSS style-->
     <link rel="stylesheet" href="css/style.css" type="text/css" />
 
+    <!--FontAwesome-->
+    <script src="https://kit.fontawesome.com/af4d281973.js"></script>
+
     <!--Axios CDN-->
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 
@@ -21,25 +24,78 @@
 <body>
 
     <header>
-        <div class="container-fluid" id="banner">
-            <h1 class="web-title">Trip Planner</h1>
-            <h5 class="web-title">For your (last-minute) travel ideas!</h5>
-        <div>
-    </header>
-    
-    <form>
-        <div class="form-group">
-            <label for="search-location">Search Location</label>
-            <input type="text" class="form-control" id="search-location" placeholder="E.g. Singapore">
+        <div class="container-fluid my-auto" id="banner">
+            <div class="col web-title">
+                <h1><i class="fas fa-globe-asia"></i> Trip Planner</h1>
+                <h4>For your (last-minute) travel ideas</h4>
+            </div>
         </div>
+    </header>
+
+    <main>
+
+        <section>
+            <div class="container-fluid">
+                <form>
+
+                    <!--Location and radius search inputs-->
+                    <div class="form-group row">
+                        <label for="search-location" class="col-sm-2 col-form-label">Search Location: </label>
+                        <div class="col-sm-4">
+                            <input type="text" class="form-control" id="search-location" placeholder="E.g. Singapore">
+                        </div>
+
+                        <label for="search-radius" class="col-sm-2 col-form-label">Radius of search (in meters) : </label>
+                        <div class="col-sm-3">
+                            <input type="text" class="form-control" id="search-radius" placeholder="E.g. 400">
+                        </div>
+                    </div>
+
+
+                    <!--Buttons for types of searches-->
+                    <div class="row">
+                        <div class="col-sm-2">
+                            <p>Type of Search: </p>
+                        </div>
+                        <!--Accommodations button-->
+                        <div class="form-check col-sm-3">
+                            <input class="form-check-input" type="checkbox" value="accommodations" id="accommodations">
+                            <label class="form-check-label" for="accommodations">Accommodations</label>
+                        </div>
+                        <!--Attractions button-->
+                        <div class="form-check col-sm-3">
+                            <input class="form-check-input" type="checkbox" value="attractions" id="attractions">
+                            <label class="form-check-label" for="attractions">Attractions</label>
+                        </div>
+                        <!--Bars and Restaurants button-->
+                        <div class="form-check col-sm-3">
+                            <input class="form-check-input" type="checkbox" value="bars-restaurants" id="bar-restaurants">
+                            <label class="form-check-label" for="bars-restaurants">Bars and Restaurants</label>
+                        </div>
+                    </div>
+
+                    <!--Search button-->
+                    <div class="col">
+                        <button type="button" class="btn btn-primary" onclick="searchLocation()">Search!</button>
+                    </div>
+
+                </form>
+            </div>
+
+
+
+            </div>
+        </section>
+
+
+        <div id="map"></div>
+
+        </div>
+
+        <!--Remnant find me button to be incorporated as part of google maps initialisation-->
         <button type="button" class="btn btn-primary" onclick="findMe()" id="find-me">Find Me!</button>
-        <button type="button" class="btn btn-primary" onclick="searchLocation()">Search!</button>
-    </form>
-    </div>
 
-    <div id="map"></div>
-
-    </div>
+    </main>
 
 
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->

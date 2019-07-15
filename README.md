@@ -74,3 +74,4 @@ color scheme:
 https://coolors.co/
 Inspiration:
 https://www.awwwards.com/sites/my-walking-challenge
+FontAwesome

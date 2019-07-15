@@ -5,13 +5,18 @@ html, body {
 .web-title {
     text-align: center;
     color:white;
+    padding:50px;
 }
 
 #banner{
     background-image:url("../images/banner.jpg");
-    height:300px;
+    /*height:300px;*/
 }
 
 #map{
     height:600px;
+}
+
+.form-group{
+    padding:10px;
 }
