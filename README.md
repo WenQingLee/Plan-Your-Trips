@@ -75,3 +75,4 @@ https://coolors.co/
 Inspiration:
 https://www.awwwards.com/sites/my-walking-challenge
 FontAwesome
+* Rollover Social Media Icons: https://codepen.io/JunaidKhalid/pen/NxaZJw

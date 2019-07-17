@@ -1,38 +1,5 @@
-// alert("it works!")
-
-
 // Map Initialisation
 function initMap() {
-
-  // Initial LatLng
-  let myLatLng = { lat: 1.290270, lng: 103.851959 }
-
-
-  // The map, centered at Singapore
-  let map = new google.maps.Map(document.getElementById('map'), {
-    zoom: 10,
-    center: myLatLng
-  });
-
-
-  // The marker, positioned at Singapore
-  let marker = new google.maps.Marker({
-    position: myLatLng,
-    map: map,
-    title: 'Begin planning your trips!'
-  });
-
-
-  // Autocomplete box
-  var autocompleteSearch = document.getElementById('search-location')
-  new google.maps.places.Autocomplete(autocompleteSearch);
-
-}
-
-
-
-// Find me function
-function findMe() {
 
   let map = new google.maps.Map(document.getElementById('map'), {
     zoom: 10,
@@ -40,15 +7,14 @@ function findMe() {
 
   // Infowindow for find me function
   let infoWindow = new google.maps.InfoWindow;
-  // Geolocation.
 
+  // Geolocation
   if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(function(position) {
       var pos = {
         lat: position.coords.latitude,
         lng: position.coords.longitude
       };
-      // console.log(pos)
       infoWindow.setPosition(pos);
       infoWindow.setContent('Location found.');
       infoWindow.open(map);
@@ -61,6 +27,46 @@ function findMe() {
     // Browser doesn't support Geolocation
     handleLocationError(false, infoWindow, map.getCenter());
   }
+
+  // Autocomplete box
+  var autocompleteSearch = document.getElementById("search-location")
+  new google.maps.places.Autocomplete(autocompleteSearch);
+
+}
+
+
+
+// Placesearch Function
+
+function placeSearch() {
+
+  let map = new google.maps.Map(document.getElementById('map'), {
+    center: { lat: -34.397, lng: 150.644 },
+    zoom: 10,
+  });
+
+  let searchInput = {
+    query: document.getElementById("search-location").value,
+    fields: ["name", "geometry"],
+  };
+
+  // SearchMap variable
+  let searchMap = new google.maps.places.PlacesService(map);
+
+  // SearchMap function
+  searchMap.findPlaceFromQuery(searchInput, function(results, status) {
+
+    map.setCenter(results[0].geometry.location);
+
+    if (status === google.maps.places.PlacesServiceStatus.OK) {
+      for (var i = 0; i < results.length; i++) {
+        createMarker(results[i], map)
+      }
+    }
+
+  });
+
+
 }
 
 
@@ -74,45 +80,15 @@ function handleLocationError(browserHasGeolocation, infoWindow, pos) {
 }
 
 
+// createMarker Function
 
+function createMarker(place, map) {
 
-
-// searchLocation function/Directions service
-function searchLocation(location) {
-
-  let searchLocationRequest = document.getElementById("search-location").value
-
-
-
-  mapSearch = new google.maps.places.PlacesService(map);
-
-
-
+  new google.maps.Marker({
+    position: place.geometry.location,
+    map: map
+  });
 }
-//   mapSearch.findPlaceFromQuery(searchLocationRequest, function(results, status) {
-//     if (status === google.maps.places.PlacesServiceStatus.OK) {
-//       for (var i = 0; i < results.length; i++) {
-//         createMarker(results[i]);
-//       }
-
-//       map.setCenter(results[0].geometry.location);
-//     }
-//   });
-// }
-
-// function createMarker(place) {
-//   var marker = new google.maps.Marker({
-//     map: map,
-//     position: place.geometry.location
-//   });
-
-//   google.maps.event.addListener(marker, 'click', function() {
-//     infowindow.setContent(place.name);
-//     infowindow.open(map, this);
-//   });
-// }
-
-
 
 
 
@@ -121,3 +97,4 @@ axios.get("https://cors-anywhere.herokuapp.com/https://maps.googleapis.com/maps/
     // handle success
     console.log(response);
   })
+
